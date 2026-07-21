@@ -29,19 +29,19 @@ export default function Home() {
             </p>
             
             {/* Job Search */}
-            <div className="bg-slate-900/50 backdrop-blur-md p-2 rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-4xl mx-auto border border-slate-800 transform transition-all hover:border-violet-500/30">
+            <div className="bg-slate-900/50 backdrop-blur-md p-4 md:p-2 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-3 md:gap-2 max-w-4xl mx-auto border border-slate-800 transform transition-all hover:border-violet-500/30">
               <input 
                 type="text" 
                 placeholder="Job title, keywords, or company" 
-                className="flex-grow px-6 py-4 rounded-full bg-transparent border-transparent text-slate-100 placeholder-slate-500 focus:bg-slate-900/30 focus:ring-0 outline-none transition-all text-lg"
+                className="flex-grow px-6 py-4 rounded-2xl md:rounded-full bg-slate-950/30 md:bg-transparent border border-slate-800 md:border-transparent text-slate-100 placeholder-slate-500 focus:bg-slate-900/30 focus:ring-0 outline-none transition-all text-lg"
               />
               <div className="h-10 w-px bg-slate-800 hidden md:block self-center"></div>
               <input 
                 type="text" 
                 placeholder="City, state, or remote" 
-                className="flex-grow px-6 py-4 rounded-full bg-transparent border-transparent text-slate-100 placeholder-slate-500 focus:bg-slate-900/30 focus:ring-0 outline-none transition-all text-lg"
+                className="flex-grow px-6 py-4 rounded-2xl md:rounded-full bg-slate-950/30 md:bg-transparent border border-slate-800 md:border-transparent text-slate-100 placeholder-slate-500 focus:bg-slate-900/30 focus:ring-0 outline-none transition-all text-lg"
               />
-              <Link href="/jobs" className="px-10 py-4 bg-violet-600 text-white font-bold text-lg rounded-full hover:bg-violet-500 transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center justify-center">
+              <Link href="/jobs" className="px-10 py-4 bg-violet-600 text-white font-bold text-lg rounded-2xl md:rounded-full hover:bg-violet-500 transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center justify-center">
                 Search
               </Link>
             </div>
@@ -52,7 +52,7 @@ export default function Home() {
         {/* Top Companies */}
         <section className="py-12 border-y border-slate-900 bg-slate-900/10">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-sm font-semibold tracking-widest uppercase mb-8"><ShinyText text="Trusted by industry leaders" speed={2} color="#64748b" shineColor="#e2e8f0" /></h2>
+            <h2 className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider md:tracking-widest uppercase mb-8 whitespace-nowrap"><ShinyText text="Trusted by industry leaders" speed={2} color="#64748b" shineColor="#e2e8f0" /></h2>
             <div className="overflow-hidden w-full relative">
               <div className="flex w-[200%] animate-[marqueeRight_20s_linear_infinite] opacity-50 grayscale hover:grayscale-0 transition-all duration-500 hover:[animation-play-state:paused]">
                 {/* First Set */}
