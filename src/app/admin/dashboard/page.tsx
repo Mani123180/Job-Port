@@ -31,20 +31,20 @@ export default function AdminDashboard() {
   ]);
 
   // Actions for Users
-  const handleApproveUser = (id) => setUsers(users.map(u => u.id === id ? { ...u, status: 'Verified' } : u));
-  const handleSuspendUser = (id) => setUsers(users.map(u => u.id === id ? { ...u, status: 'Suspended' } : u));
-  const handleDeleteUser = (id) => setUsers(users.filter(u => u.id !== id));
+  const handleApproveUser = (id: number) => setUsers(users.map(u => u.id === id ? { ...u, status: 'Verified' } : u));
+  const handleSuspendUser = (id: number) => setUsers(users.map(u => u.id === id ? { ...u, status: 'Suspended' } : u));
+  const handleDeleteUser = (id: number) => setUsers(users.filter(u => u.id !== id));
 
   // Actions for Jobs
-  const handleApproveJob = (id) => setJobs(jobs.map(j => j.id === id ? { ...j, status: 'Active' } : j));
-  const handleFeatureJob = (id) => setJobs(jobs.map(j => j.id === id ? { ...j, featured: !j.featured } : j));
-  const handleDeleteJob = (id) => setJobs(jobs.filter(j => j.id !== id));
+  const handleApproveJob = (id: number) => setJobs(jobs.map(j => j.id === id ? { ...j, status: 'Active' } : j));
+  const handleFeatureJob = (id: number) => setJobs(jobs.map(j => j.id === id ? { ...j, featured: !j.featured } : j));
+  const handleDeleteJob = (id: number) => setJobs(jobs.filter(j => j.id !== id));
 
   // Actions for Companies
-  const handleVerifyCompany = (id) => setCompanies(companies.map(c => c.id === id ? { ...c, status: 'Verified' } : c));
-  const handleDeleteCompany = (id) => setCompanies(companies.filter(c => c.id !== id));
+  const handleVerifyCompany = (id: number) => setCompanies(companies.map(c => c.id === id ? { ...c, status: 'Verified' } : c));
+  const handleDeleteCompany = (id: number) => setCompanies(companies.filter(c => c.id !== id));
 
-  const handleStubAction = (action, entityName) => {
+  const handleStubAction = (action: string, entityName: string) => {
     alert(`${action} action triggered for ${entityName}. This would open a modal or new page in the full implementation.`);
   };
 
