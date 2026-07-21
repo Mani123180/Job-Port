@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 
 export default function InternshipsPage() {
   const [showFilters, setShowFilters] = useState(false);
-  const [internships, setInternships] = useState([]);
+  const [internships, setInternships] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
 
   // Filter States
   const [searchQuery, setSearchQuery] = useState("");
@@ -161,7 +161,7 @@ export default function InternshipsPage() {
                     <input 
                        type="checkbox" 
                        checked={compensation.paid}
-                       onChange={(e) => setCompensation({...compensation, paid: e.target.checked})}
+                       onChange={(e: any) => setCompensation({...compensation, paid: e.target.checked})}
                        className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" 
                     />
                     <span className="text-gray-700 text-sm font-medium">Paid Internships Only</span>
@@ -170,7 +170,7 @@ export default function InternshipsPage() {
                     <input 
                        type="checkbox" 
                        checked={compensation.unpaid}
-                       onChange={(e) => setCompensation({...compensation, unpaid: e.target.checked})}
+                       onChange={(e: any) => setCompensation({...compensation, unpaid: e.target.checked})}
                        className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" 
                     />
                     <span className="text-gray-700 text-sm">Unpaid Internships</span>
@@ -184,7 +184,7 @@ export default function InternshipsPage() {
                     <input 
                        type="checkbox" 
                        checked={remoteOnly}
-                       onChange={(e) => setRemoteOnly(e.target.checked)}
+                       onChange={(e: any) => setRemoteOnly(e.target.checked)}
                        className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" 
                     />
                     <span className="text-gray-700 text-sm">Remote Only</span>
@@ -199,7 +199,7 @@ export default function InternshipsPage() {
                  type="text" 
                  placeholder="Search live internships by role or company..." 
                  value={searchQuery}
-                 onChange={(e) => setSearchQuery(e.target.value)}
+                 onChange={(e: any) => setSearchQuery(e.target.value)}
                  className="flex-grow px-4 py-3 bg-gray-50 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-all text-sm" 
                />
                <button className="px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors text-sm whitespace-nowrap">

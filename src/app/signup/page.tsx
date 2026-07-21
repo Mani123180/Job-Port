@@ -14,7 +14,7 @@ export default function SignupPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  const handleSignup = (e) => {
+  const handleSignup = (e: any) => {
     e.preventDefault();
     setIsLoading(true);
 

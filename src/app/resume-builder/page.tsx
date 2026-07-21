@@ -306,12 +306,12 @@ export default function ResumeBuilderPage() {
                  </button>
                  {activeAccordion === 'personal' && (
                    <div className="p-5 bg-white grid grid-cols-2 gap-4">
-                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">First Name</label><input type="text" value={resumeData.firstName} onChange={(e) => handleInputChange('firstName', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter First Name" /></div>
-                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Last Name</label><input type="text" value={resumeData.lastName} onChange={(e) => handleInputChange('lastName', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Last Name" /></div>
-                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Professional Title</label><input type="text" value={resumeData.title} onChange={(e) => handleInputChange('title', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Professional Title" /></div>
-                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Email</label><input type="email" value={resumeData.email} onChange={(e) => handleInputChange('email', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Email" /></div>
-                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Phone</label><input type="text" value={resumeData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Phone Number" /></div>
-                     <div className="col-span-2"><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">LinkedIn URL</label><input type="text" value={resumeData.linkedin} onChange={(e) => handleInputChange('linkedin', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter LinkedIn URL" /></div>
+                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">First Name</label><input type="text" value={resumeData.firstName} onChange={(e: any) => handleInputChange('firstName', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter First Name" /></div>
+                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Last Name</label><input type="text" value={resumeData.lastName} onChange={(e: any) => handleInputChange('lastName', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Last Name" /></div>
+                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Professional Title</label><input type="text" value={resumeData.title} onChange={(e: any) => handleInputChange('title', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Professional Title" /></div>
+                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Email</label><input type="email" value={resumeData.email} onChange={(e: any) => handleInputChange('email', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Email" /></div>
+                     <div><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Phone</label><input type="text" value={resumeData.phone} onChange={(e: any) => handleInputChange('phone', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Phone Number" /></div>
+                     <div className="col-span-2"><label className="block text-xs font-bold text-gray-600 mb-1 uppercase">LinkedIn URL</label><input type="text" value={resumeData.linkedin} onChange={(e: any) => handleInputChange('linkedin', e.target.value)} className="w-full p-2.5 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter LinkedIn URL" /></div>
                    </div>
                  )}
                </div>
@@ -328,7 +328,7 @@ export default function ResumeBuilderPage() {
                        <label className="block text-xs font-bold text-gray-600 uppercase">Summary Statement</label>
                        <button onClick={() => setShowAiModal(true)} className="text-xs font-bold text-purple-600 flex items-center gap-1 hover:underline bg-purple-50 px-2 py-1 rounded">✨ Generate with AI</button>
                      </div>
-                     <textarea rows={5} value={resumeData.summary} onChange={(e) => handleInputChange('summary', e.target.value)} className="w-full p-3 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write a brief overview of your career..."></textarea>
+                     <textarea rows={5} value={resumeData.summary} onChange={(e: any) => handleInputChange('summary', e.target.value)} className="w-full p-3 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write a brief overview of your career..."></textarea>
                    </div>
                  )}
                </div>
@@ -367,7 +367,7 @@ export default function ResumeBuilderPage() {
                  {activeAccordion === 'skills' && (
                    <div className="p-5 bg-white">
                      <label className="block text-xs font-bold text-gray-600 mb-1 uppercase">Technical & Soft Skills (comma separated)</label>
-                     <textarea rows={2} value={resumeData.skills} onChange={(e) => handleInputChange('skills', e.target.value)} className="w-full p-3 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="React, Python, Communication..."></textarea>
+                     <textarea rows={2} value={resumeData.skills} onChange={(e: any) => handleInputChange('skills', e.target.value)} className="w-full p-3 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="React, Python, Communication..."></textarea>
                    </div>
                  )}
                </div>

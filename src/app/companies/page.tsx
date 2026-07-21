@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CompaniesPage() {
-  const [companies, setCompanies] = useState([]);
+  const [companies, setCompanies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
   
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all"); // 'all', 'featured', 'verified', 'top'
@@ -114,7 +114,7 @@ export default function CompaniesPage() {
                type="text" 
                placeholder="Search Live Companies (e.g., TechNova)..." 
                value={searchQuery}
-               onChange={(e) => setSearchQuery(e.target.value)}
+               onChange={(e: any) => setSearchQuery(e.target.value)}
                className="flex-grow px-6 py-4 bg-transparent text-gray-900 placeholder-gray-500 outline-none rounded-xl" 
              />
              <button className="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors">

@@ -6,9 +6,9 @@ import Navbar from "../../components/Navbar";
 
 export default function JobsPage() {
   const [showFilters, setShowFilters] = useState(false);
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
   
   // Filter States
   const [searchQuery, setSearchQuery] = useState("");
@@ -120,7 +120,7 @@ export default function JobsPage() {
                   <input 
                     type="checkbox" 
                     checked={remoteOnly}
-                    onChange={(e) => setRemoteOnly(e.target.checked)}
+                    onChange={(e: any) => setRemoteOnly(e.target.checked)}
                     className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" 
                   />
                   <span className="text-gray-700 text-sm font-medium">Remote Jobs Only</span>
@@ -152,7 +152,7 @@ export default function JobsPage() {
                  type="text" 
                  placeholder="Search by job title, company, or keywords..." 
                  value={searchQuery}
-                 onChange={(e) => setSearchQuery(e.target.value)}
+                 onChange={(e: any) => setSearchQuery(e.target.value)}
                  className="flex-grow px-4 py-3 bg-gray-50 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all text-sm" 
                />
                <button className="px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors text-sm whitespace-nowrap">

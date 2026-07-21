@@ -53,9 +53,9 @@ export default function SeekerDashboard() {
   // --- Handlers ---
   
   // Apply for Job Handler
-  const [applyingJobId, setApplyingJobId] = useState(null);
+  const [applyingJobId, setApplyingJobId] = useState<any>(null);
 
-  const handleApply = (e) => {
+  const handleApply = (e: any) => {
     e.preventDefault();
     const job = availableJobs.find(j => j.id === applyingJobId);
     
@@ -84,7 +84,7 @@ export default function SeekerDashboard() {
     showToast(accepted ? "Offer Accepted! Congratulations!" : "Offer Rejected.");
   };
 
-  const handleSaveProfile = (e) => {
+  const handleSaveProfile = (e: any) => {
     e.preventDefault();
     setProfile({ ...profile, completion: 100 });
     showToast("Profile Updated!");
@@ -309,7 +309,7 @@ export default function SeekerDashboard() {
                    <div className="md:col-span-2">
                       <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Upload Resume (PDF)</label>
                       <label className="border-2 border-dashed border-slate-700 rounded-3xl p-12 text-center bg-slate-950 hover:bg-slate-900 hover:border-teal-500 transition-colors cursor-pointer block relative group shadow-sm">
-                         <input type="file" accept=".pdf,.doc,.docx" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={(e) => {
+                         <input type="file" accept=".pdf,.doc,.docx" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={(e: any) => {
                             if(e.target.files && e.target.files.length > 0) {
                                showToast("Resume uploaded successfully!");
                             }

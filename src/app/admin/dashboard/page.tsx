@@ -7,7 +7,7 @@ import BorderGlow from "../../../components/BorderGlow";
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("overview");
   const [userTab, setUserTab] = useState("seekers");
-  const [selectedContent, setSelectedContent] = useState(null);
+  const [selectedContent, setSelectedContent] = useState<any>(null);
   const [notificationStatus, setNotificationStatus] = useState("");
 
   // Mock Data as State
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
     alert(`${action} action triggered for ${entityName}. This would open a modal or new page in the full implementation.`);
   };
 
-  const handleSendNotification = (e) => {
+  const handleSendNotification = (e: any) => {
     e.preventDefault();
     setNotificationStatus("Sending...");
     setTimeout(() => {

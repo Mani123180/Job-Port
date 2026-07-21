@@ -49,7 +49,7 @@ export default function EmployerDashboard() {
   // --- Handlers ---
   
   // Job Handlers
-  const handlePostJob = (e) => {
+  const handlePostJob = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const newJob = {
@@ -79,14 +79,14 @@ export default function EmployerDashboard() {
   };
 
   // Applicant Handlers
-  const [interviewForm, setInterviewForm] = useState(null);
+  const [interviewForm, setInterviewForm] = useState<any>(null);
 
   const handleUpdateAppStatus = (id, newStatus) => {
     setApplications(applications.map(a => a.id === id ? { ...a, status: newStatus } : a));
     showToast(`Candidate marked as ${newStatus}`);
   };
 
-  const handleScheduleInterview = (e) => {
+  const handleScheduleInterview = (e: any) => {
     e.preventDefault();
     handleUpdateAppStatus(interviewForm, "Interview Scheduled");
     setInterviewForm(null);
@@ -94,7 +94,7 @@ export default function EmployerDashboard() {
   };
 
   // Profile Handler
-  const handleSaveProfile = (e) => {
+  const handleSaveProfile = (e: any) => {
     e.preventDefault();
     showToast("Company profile updated!");
   };
