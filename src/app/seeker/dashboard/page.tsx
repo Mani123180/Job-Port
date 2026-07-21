@@ -9,6 +9,7 @@ export default function SeekerDashboard() {
 
   // Mock State for Notifications
   const [toastMessage, setToastMessage] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -106,10 +107,23 @@ export default function SeekerDashboard() {
         {toastMessage && <span>✨ {toastMessage}</span>}
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar - Midnight Blue */}
-      <aside className="w-72 bg-slate-950 text-slate-300 h-screen fixed flex flex-col z-10 hidden md:flex shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-800">
-        <div className="p-8 border-b border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950">
+      <aside className={`w-72 bg-slate-950 text-slate-300 h-screen fixed flex flex-col z-40 transition-transform duration-300 md:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-800`}>
+        <div className="p-8 border-b border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950 flex justify-between items-center">
           <Link href="/" className="text-3xl font-bold tracking-tighter text-white drop-shadow-md">Job<span className="text-teal-400">Portal</span> <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-900/30 border border-emerald-500/30 px-2.5 py-1 rounded-full ml-2 align-top tracking-widest shadow-inner">SEEKER</span></Link>
+          <button onClick={() => setIsSidebarOpen(false)} className="text-slate-400 hover:text-white p-1 md:hidden">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
         
         <div className="p-5 flex-grow overflow-y-auto">
@@ -123,7 +137,7 @@ export default function SeekerDashboard() {
             ].map(tab => (
               <button 
                 key={tab.id}
-                onClick={() => { setActiveTab(tab.id); setApplyingJobId(null); }}
+                onClick={() => { setActiveTab(tab.id); setApplyingJobId(null); setIsSidebarOpen(false); }}
                 className={`w-full outline-none transition-all duration-300 ${activeTab === tab.id ? 'translate-x-1' : 'hover:translate-x-1'}`}
               >
                 <BorderGlow 
@@ -153,8 +167,24 @@ export default function SeekerDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-grow md:ml-72 p-10 lg:p-12 relative overflow-hidden">
+      <main className="flex-grow md:ml-72 p-6 md:p-10 lg:p-12 relative overflow-hidden">
         
+        {/* Mobile Header Bar */}
+        <div className="flex items-center justify-between p-4 bg-slate-950 border-b border-slate-800 md:hidden -mx-6 -mt-6 mb-6 relative z-20">
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="text-slate-300 hover:text-white p-2"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div className="text-lg font-bold text-white flex items-center gap-2">
+            JobPortal <span className="text-[9px] font-bold text-teal-300 bg-teal-900/30 border border-teal-500/20 px-2 py-0.5 rounded-full">SEEKER</span>
+          </div>
+          <div className="w-10"></div>
+        </div>
+
         {/* Subtle Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-400/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-400/5 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
